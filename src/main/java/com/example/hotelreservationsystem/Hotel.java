@@ -3,25 +3,26 @@ package com.example.hotelreservationsystem;
 import jakarta.persistence.*;
 
 @Entity
+@Table(name = "Hotel")
 public class Hotel {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     private String name;
     private String location;
+    @Column(name = "pricePerNight")
     private Double pricePerNight;
 
-    // 默认构造函数
+    // default function
     public Hotel() {}
 
-    // 带参构造函数
     public Hotel(String name, String location, Double pricePerNight) {
         this.name = name;
         this.location = location;
         this.pricePerNight = pricePerNight;
     }
 
-    // Getter和Setter方法
+    // Getter and Setter function
     public Long getId() {
         return id;
     }

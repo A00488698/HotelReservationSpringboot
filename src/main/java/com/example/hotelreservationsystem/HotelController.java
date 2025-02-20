@@ -12,13 +12,13 @@ public class HotelController {
     @Autowired
     private HotelRepository hotelRepository;
 
-    // GET请求：获取所有酒店
+    // GET
     @GetMapping
     public List<Hotel> getAllHotels() {
         return hotelRepository.findAll();
     }
 
-    // POST请求：添加新酒店
+    // POST
     @PostMapping
     public Hotel addHotel(@RequestBody Hotel hotel) {
         return hotelRepository.save(hotel);
